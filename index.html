@@ -11,17 +11,8 @@
             filter: blur(5px);
         }
 
-        /* Style the title input to blend into the background */
-        #noteTitle {
-            background-color: transparent;
-            border: none;
-            color: white;
-            text-align: center;
-            font-size: 1.25rem;
-        }
-
         #noteTitle::placeholder {
-            color: #9CA3AF; /* Light gray for placeholder */
+            color: #f4f4f4; /* Light gray for placeholder */
             opacity: 0.7;
         }
 
@@ -48,7 +39,7 @@
                 <img class="w-6 h-6" src="./assets/new.png" alt="New">
             </button>
             <!-- Title Input -->
-            <input id="noteTitle" type="text" placeholder="Note Title" class="flex-grow mx-2 w-1/2">
+            <input id="noteTitle" type="text" placeholder="Note Title" class="flex-grow mx-2 w-1/2 bg-transparent border-none text-white text-center text-xl">
             <!-- Open Note -->
             <button id="openNoteBtn" class="px-2 py-1 bg-yellow-500 rounded hover:bg-yellow-600 mr-2">
                 <img class="w-6 h-6" src="./assets/open.png" alt="Open">
@@ -60,13 +51,13 @@
         </div>
 
         <!-- Note Input -->
-        <textarea id="noteContent" class="flex-grow p-3 mb-1 bg-gray-600 rounded outline-none" placeholder="Type your notes here..."></textarea>
+        <textarea id="noteContent" class="flex-grow p-3 mb-1 bg-gray-600 rounded outline-none resize-none" placeholder="Type your notes here..."></textarea>
 
     </main>
 
     <!-- Modal for Notes List -->
     <div id="notesModal" class="container mx-auto fixed inset-0 items-center flex justify-center bg-gray-900 bg-opacity-50 hidden">
-        <div class="bg-gray-800 p-4 rounded w-1/2">
+        <div class="bg-gray-800 p-4 rounded w-3/4 sm:w-1/2 ">
             <div class="text-lg font-bold mb-4 flex justify-between">
                 <h2>Saved Notes</h2>
                 <button id="closeModalBtn"><img class="w-4 h-4" src="./assets/close.png" alt="Close"></button>
