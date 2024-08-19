@@ -10,15 +10,6 @@
         .blurred-bg {
             filter: blur(5px);
         }
-
-        #noteTitle::placeholder {
-            color: #f4f4f4; /* Light gray for placeholder */
-            opacity: 0.7;
-        }
-
-        #noteTitle:focus {
-            outline: none;
-        }
     </style>
 </head>
 
@@ -33,13 +24,13 @@
     <main id="mainContent" class="container mx-auto flex-grow m-2 py-2 px-4 rounded bg-gray-800 flex flex-col">
 
         <!-- Menu -->
-        <div class="flex items-center py-2 mb-2 flex-row rounded">
+        <div class="flex items-center py-2 mb-2 flex-wrap rounded">
             <!-- New Note -->
             <button id="newNoteBtn" class="px-2 py-1 bg-sky-500 rounded hover:bg-sky-600">
                 <img class="w-6 h-6" src="./assets/new.png" alt="New">
             </button>
             <!-- Title Input -->
-            <input id="noteTitle" type="text" placeholder="Note Title" class="flex-grow mx-2 w-1/2 bg-transparent border-none text-white text-center text-xl">
+            <input id="noteTitle" type="text" placeholder="Note Title" class="flex-grow mx-2 w-1/2 bg-transparent border-none text-center sm:text-xl text-lg outline-none">
             <!-- Open Note -->
             <button id="openNoteBtn" class="px-2 py-1 bg-yellow-500 rounded hover:bg-yellow-600 mr-2">
                 <img class="w-6 h-6" src="./assets/open.png" alt="Open">

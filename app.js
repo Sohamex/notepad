@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const noteItem = document.createElement('div');
                 noteItem.classList.add('flex', 'justify-between', 'items-center', 'bg-gray-600', 'p-2', 'rounded', 'flex-wrap');
                 noteItem.innerHTML = `
-                    <span class="ml-2 truncate w-3/4">${note.title}</span>
+                    <span class="ml-2 truncate w-3/5 sm:w-3/4">${note.title}</span>
                     <button class="px-2 py-1 bg-red-500 rounded hover:bg-red-600 delete-btn" data-index="${index}">
                         <img class="w-6 h-6" src="./assets/delete.png" alt="Delete">
                     </button>
