@@ -20,21 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (notes.length == 0) {
             // If no notes, show the empty box with "No notes" message
             const noNotesMessage = document.createElement('div');
-            noNotesMessage.classList.add('border-2', 'border-gray-600', 'p-4', 'rounded-lg', 'text-center', 'text-gray-400');
+            noNotesMessage.classList.add('border-2', 'border-gray-600', 'p-2', 'rounded', 'text-center', 'text-gray-400');
             noNotesMessage.textContent = 'No notes found';
             notesList.appendChild(noNotesMessage);
         } else {
             // If there are notes, create the list
             notes.forEach((note, index) => {
                 const noteItem = document.createElement('div');
-                noteItem.classList.add('flex', 'justify-between', 'items-center', 'bg-gray-600', 'p-2', 'rounded-lg', 'flex-wrap');
+                noteItem.classList.add('flex', 'justify-between', 'items-center', 'bg-gray-600', 'p-2', 'rounded', 'flex-wrap');
                 noteItem.innerHTML = `
                     <span class="ml-2">${note.title}</span>
-                    <div class="flex justify-end w-full sm:w-auto mt-2 sm:mt-0">
-                        <button class="px-2 py-1 bg-red-500 rounded-lg hover:bg-red-600 delete-btn" data-index="${index}">
-                            <img class="w-6 h-6" src="./assets/delete.png" alt="Delete">
-                        </button>
-                    </div>
+                    <button class="px-2 py-1 bg-red-500 rounded hover:bg-red-600 delete-btn" data-index="${index}">
+                        <img class="w-6 h-6" src="./assets/delete.png" alt="Delete">
+                    </button>
                 `;
                 noteItem.addEventListener('click', () => openNote(index));
                 notesList.appendChild(noteItem);
