@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const notesList = document.getElementById('notesList');
     const mainContent = document.getElementById('mainContent');
 
+    const textLeftBtn = document.getElementById('textLeftBtn');
+    const textCenterBtn = document.getElementById('textCenterBtn');
+    const textRightBtn = document.getElementById('textRightBtn');
+    const textJustifyBtn = document.getElementById('textJustifyBtn');
+
+
     let notes = JSON.parse(localStorage.getItem('notes')) || [];
     let currentNoteIndex = null; // Track the currently opened note index
     let originalNote = {}; // Track the original note's title and content
@@ -129,9 +135,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function createNewNote() {
         noteTitleInput.value = '';
         noteContentTextarea.value = '';
+        console.log('new')
         currentNoteIndex = null; // Reset the current note index when creating a new note
         originalNote = {}; // Reset the original note
     }
+
+    // function textLeft() {
+    //     noteContentTextarea.classList.add('text-left');
+    //     console.log('left');
+    //     noteContentTextarea.classList.remove('text-center', 'text-right', 'text-justify');
+    // }
+    // function textCenter() {
+    //     noteContentTextarea.classList.add('text-center');
+    //     console.log('center');
+    //     noteContentTextarea.classList.remove('text-left', 'text-right', 'text-justify');
+    // }
+    // function textRight() {
+    //     noteContentTextarea.classList.add('text-right');
+    //     console.log('right');
+    //     noteContentTextarea.classList.remove('text-center', 'text-left', 'text-justify');
+    // }
+    // function textJustify() {
+    //     noteContentTextarea.classList.add('text-justify');
+    //     console.log('justify');
+    //     noteContentTextarea.classList.remove('text-center', 'text-right', 'text-left');
+    // }
 
     // Event listeners for buttons
     saveNoteBtn.addEventListener('click', () => {
@@ -142,8 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
     newNoteBtn.addEventListener('click', createNewNote);
+    
     openNoteBtn.addEventListener('click', openNoteList);
     closeModalBtn.addEventListener('click', closeModal);
+    
+    // textLeftBtn.addEventListener('click', textLeft);
+    // textCenterBtn.addEventListener('click', textCenter);
+    // textRightBtn.addEventListener('click', textRight);
+    // textJustifyBtn.addEventListener('click', textJustify);
 
     // Render the notes list when the page loads
     renderNotesList();
