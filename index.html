@@ -13,18 +13,18 @@
     </style>
 </head>
 
-<body class="bg-gray-900 text-white flex flex-col min-h-screen">
+<body class="bg-neutral-950 text-neutral-100 flex flex-col min-h-screen">
 
     <!-- Header -->
-    <header class="bg-gray-800 p-4">
+    <header class="sm:p-6 p-4 border-b">
         <h1 class="sm:text-4xl text-3xl font-bold text-center cursor-pointer">Notepad</h1>
     </header>
 
     <!-- Main Content -->
-    <main id="mainContent" class="container mx-auto flex-grow sm:my-6 my-2 py-2 px-4 sm:rounded bg-gray-800 flex flex-col">
+    <main id="mainContent" class="container mx-auto flex-grow py-1 px-4 flex flex-col">
 
         <!-- Menu -->
-        <div class="flex items-center py-2 mb-2 flex-wrap">
+        <div class="flex items-center py-2 flex-wrap">
             <!-- New Note -->
             <button id="newNoteBtn" class="px-2 py-1">
                 <img class="sm:w-8 w-6 sm:h-8 h-6" src="./assets/new.png" alt="New">
@@ -32,23 +32,29 @@
             <!-- Title Input -->
             <input id="noteTitle" type="text" placeholder="Note Title" class="font-bold flex-grow mx-2 sm:my-2 my-0 w-1/2 bg-transparent border-none text-center sm:text-3xl text-xl outline-none">
             <!-- Open Note -->
-            <button id="openNoteBtn" class="px-2 py-1 bg-blue-500 rounded hover:bg-blue-600 mr-2 border-2">
-                <img class="sm:w-6 w-5 sm:h-6 h-5" src="./assets/open.png" alt="Open">
+            <button id="openNoteBtn" class="px-2 py-1 mr-2 ">
+                <img class="sm:w-7 w-5 sm:h-7 h-5" src="./assets/open.png" alt="Open">
             </button>
             <!-- Save Note -->
-            <button id="saveNoteBtn" class="px-2 py-1 bg-blue-500 rounded hover:bg-blue-600 border-2">
-                <img class="sm:w-6 w-5 sm:h-6 h-5" src="./assets/save.png" alt="Save">
+            <button id="saveNoteBtn" class="px-2 py-1">
+                <img class="sm:w-7 w-5 sm:h-7 h-5" src="./assets/save.png" alt="Save">
             </button>
         </div>
 
         <!-- Note Input -->
-        <textarea id="noteContent" class="flex-grow px-8 py-6 mb-1 bg-gray-600 rounded outline-none resize-none text-justify" placeholder="Type your notes here..."></textarea>
+        <textarea id="noteContent" class="flex-grow px-8 py-4 mb-4 bg-neutral-200 rounded outline-none resize-none text-justify" placeholder="Type your notes here..."></textarea>
 
     </main>
 
+    <!-- Footer -->
+    <footer class="p-2 border-t flex flex-row justify-between font-semibold">
+        <p class="text-left cursor-pointer">© 2024 Notepad<p>
+        <a href="https://github.com/Sohamex" class="cursor-pointer mr-2 hover:underline duration-200">Github</a>
+    </footer>
+
     <!-- Modal for Notes List -->
-    <div id="notesModal" class="container mx-auto fixed inset-0 items-center flex justify-center bg-gray-900 bg-opacity-50 hidden">
-        <div class="bg-gray-800 p-4 rounded w-3/4 sm:w-1/2 ">
+    <div id="notesModal" class="container mx-auto fixed inset-0 items-center flex justify-center bg-opacity-50 hidden">
+        <div class="bg-neutral-900 p-4 rounded w-3/4 sm:w-1/2 ">
             <div class="text-lg font-semibold mb-4 flex justify-between">
                 <h2>Saved Notes</h2>
                 <button id="closeModalBtn"><img class="w-4 h-4" src="./assets/close.png" alt="Close"></button>

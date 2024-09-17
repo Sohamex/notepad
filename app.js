@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // If there are notes, create the list
             notes.forEach((note, index) => {
                 const noteItem = document.createElement('div');
-                noteItem.classList.add('flex', 'justify-between', 'items-center', 'bg-gray-600', 'p-2', 'rounded', 'flex-wrap');
+                noteItem.classList.add('flex', 'justify-between', 'items-center', 'bg-neutral-200', 'p-2', 'rounded', 'flex-wrap', 'text-neutral-950');
                 noteItem.innerHTML = `
                     <span class="ml-2 truncate w-3/5 sm:w-3/4 font-semibold">${note.title}</span>
-                    <button class="px-2 py-1 bg-red-500 rounded hover:bg-red-600 delete-btn border-2" data-index="${index}">
-                        <img class="w-6 h-6" src="./assets/delete.png" alt="Delete">
+                    <button class="px-2 py-1 delete-btn" data-index="${index}">
+                        <img class="sm:w-7 w-5 sm:h-7 h-5" src="./assets/delete-black.png" alt="Delete">
                     </button>
                 `;
                 noteItem.addEventListener('click', () => openNote(index));
